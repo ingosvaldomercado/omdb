@@ -48,7 +48,6 @@ Those values are being fetched by the ConfigManager, that it's a singleton to wo
 
 |Key|Description|
 |-----|----|
-|I_KEY|i Key provided by OMDB API|
 |API_KEY|API KEY provided by OMDB API|
 |DEV_API_BASE_URL|Base URL for the API|
 |PROD_API_BASE_URL|Base URL for the API|
@@ -72,6 +71,68 @@ It also has interface for Persistance with Core Data.
 |poster|Optional String|URL of the movie poster|
 |type|Type enum|Different types of format|
 |imbdId|String|ID of the movie in iMDB|
+|rated|String?||
+|released|String?|Release year or the movie|
+|genre|String?|Genre fot he movie|
+|director|String?|Director's names|
+|actors|String?|Actors's names|
+|plot|String?|Brief description of the movie|
+|language|String?|Original language of the movie|
+|country|String?|Origin of the movie|
+|awards|String?|Awards received by the movie|
+|ratings|Ratings?|Array of ratings from many sources|
+|imdbRating|String?|imdb rating|
+|imdbVotes|String?|imdb votes|
+|totalSeasons|String?|Number of seasons, in case series|
+|isFavorite|Bool|Determine if a movie was marked whatever favorite or not|
+
+- enum Type:
+|movie|
+|series|
+|game|
+|episodes|
+    
+##### Responses
+
+- SearchResponse:
+
+|Property|Type|Description|
+|-----|----|----|
+|search|[MovieResponse]|List of movies|
+|totalResults|String|Number of total movies|
+|response|String|Boolean state of the response|
+
+* Note: OMDB API always returns 10 rows per page, so a pagination was added to the query by passing the page parameter.
+
+- ErrorResponse:
+
+|Property|Type|Description|
+|-----|----|----|
+|error|String|Description of the error coming from server|
+|response|String|Boolean state of the response, on error default is false|
+
+- MovieResponse:
+
+|Property|Type|Description|
+|-----|----|----|
+|title|String|Name of the movie|
+|year|String|Release year|
+|poster|Optional String|URL of the movie poster|
+|type|Type enum|Different types of format|
+|imbdId|String|ID of the movie in iMDB|
+|rated|String?||
+|released|String?|Release year or the movie|
+|genre|String?|Genre fot he movie|
+|director|String?|Director's names|
+|actors|String?|Actors's names|
+|plot|String?|Brief description of the movie|
+|language|String?|Original language of the movie|
+|country|String?|Origin of the movie|
+|awards|String?|Awards received by the movie|
+|ratings|Ratings?|Array of ratings from many sources|
+|imdbRating|String?|imdb rating|
+|imdbVotes|String?|imdb votes|
+|totalSeasons|String?|Number of seasons, in case series|
 
 ##### Core Data Entities
 
@@ -100,9 +161,7 @@ Implementing MVVM we ensure a decopled code, and allows us to keep an organized 
 
 ### TO-DO
 
-- Keep more description and imbd rate from API. The API calls are not returning this info even if we add the plot full parameter in the request URL.
-- Fix pagination. There is a known issue when we fetch the latest page from the API. (WIP)
-- Add unit testing.
+- Add unit testing. (WIP)
 
 ## License
 

@@ -1,0 +1,41 @@
+{
+  "Search": [
+    {
+      "Title": "White Chicks",
+      "Year": "2004",
+      "imdbID": "tt0381707",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTY3OTg2OTM3OV5BMl5BanBnXkFtZTYwNzY5OTA3._V1_SX300.jpg"
+    },
+    {
+      "Title": "Chicks in White Satin",
+      "Year": "1993",
+      "imdbID": "tt0106555",
+      "Type": "movie",
+      "Poster": "N/A"
+    },
+    {
+      "Title": "A Couple of White Chicks at the Hairdresser",
+      "Year": "2007",
+      "imdbID": "tt0965369",
+      "Type": "movie",
+      "Poster": "N/A"
+    },
+    {
+      "Title": "White Chicks, Incorporated",
+      "Year": "1998",
+      "imdbID": "tt1105304",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BYTBlNGEyZGMtMGU5My00MzQ3LWFmYjItMzhkYTc1OWNiMzY4XkEyXkFqcGdeQXVyNDA4NDU3NDg@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Crazy White Chicks",
+      "Year": "2014",
+      "imdbID": "tt7322568",
+      "Type": "series",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BYTkxNGIxMWQtODM2Yi00ZTI2LWI5ZjgtOGVmM2JmYTdhMzU0XkEyXkFqcGdeQXVyNDQ5NDE5NQ@@._V1_SX300.jpg"
+    }
+  ],
+  "totalResults": "5",
+  "Response": "True"
+}

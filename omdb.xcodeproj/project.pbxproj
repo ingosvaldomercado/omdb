@@ -37,11 +37,34 @@
 			);
 			target = 4F87F9BC2CF9808B003F7138 /* omdb */;
 		};
+		4FB65BFF2CFCCCCE00B9C646 /* Exceptions for "omdbTests" folder in "omdbTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				responses/failedSearchResponse.json,
+				responses/successfulSearchResponse.json,
+			);
+			target = 4F87F9D12CF9808D003F7138 /* omdbTests */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		4FB65C002CFCCCCE00B9C646 /* Exceptions for "omdbTests" folder in "Compile Sources" phase from "omdbTests" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 4F87F9CE2CF9808D003F7138 /* Sources */;
+			membershipExceptions = (
+				responses/failedSearchResponse.json,
+				responses/successfulSearchResponse.json,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4F87F9D52CF9808D003F7138 /* omdbTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4FB65BFF2CFCCCCE00B9C646 /* Exceptions for "omdbTests" folder in "omdbTests" target */,
+				4FB65C002CFCCCCE00B9C646 /* Exceptions for "omdbTests" folder in "Compile Sources" phase from "omdbTests" target */,
+			);
 			path = omdbTests;
 			sourceTree = "<group>";
 		};
