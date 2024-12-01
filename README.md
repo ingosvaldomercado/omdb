@@ -87,10 +87,13 @@ It also has interface for Persistance with Core Data.
 |isFavorite|Bool|Determine if a movie was marked whatever favorite or not|
 
 - enum Type:
-|movie|
-|series|
-|game|
-|episodes|
+
+|Movie types||
+|---|-|
+|movie||
+|series||
+|game||
+|episodes||
     
 ##### Responses
 
@@ -102,7 +105,7 @@ It also has interface for Persistance with Core Data.
 |totalResults|String|Number of total movies|
 |response|String|Boolean state of the response|
 
-* Note: OMDB API always returns 10 rows per page, so a pagination was added to the query by passing the page parameter.
+> Note: OMDB API always returns 10 rows per page, so a pagination was added to the query by passing the page parameter.
 
 - ErrorResponse:
 
