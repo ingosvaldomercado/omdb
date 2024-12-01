@@ -18,6 +18,22 @@ class MovieViewModel: ObservableObject {
         self.viewContext = viewContext
     }
     
+    func fetchMovieDetail(id: String) async throws {
+        do {
+            let client = MovieClient(endpoint: .detail(id: id))
+            let result: MovieResponse = try await client.performAndDecode()
+            
+            let favoriteIds = movie.isFavorite ? Set([movie.imdbID]) : []
+            self.movie = MovieAdapter.adapt(from: result, favoriteIds: favoriteIds)
+            
+            print("Fetched movie list: \(result)")
+        } catch let APIError.apiError(message) {
+            print("Api error: \(message)")
+        } catch {
+            print("Unexpected error")
+        }
+    }
+    
     func saveFavoriteMovie() {
         let newMovie = FavoriteMovie(context: viewContext)
         newMovie.title = movie.title

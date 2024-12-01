@@ -6,7 +6,7 @@
 //
 
 struct SearchResponse: Codable {
-    let search: [Movie]
+    let search: [MovieResponse]
     let numberOfRows: String
     
     enum CodingKeys: String, CodingKey {

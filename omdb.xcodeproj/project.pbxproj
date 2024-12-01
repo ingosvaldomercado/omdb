@@ -34,21 +34,10 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
-				omdb.xcdatamodeld,
 			);
 			target = 4F87F9BC2CF9808B003F7138 /* omdb */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		4F984D142CF981C6009CB6AA /* Exceptions for "omdb" folder in "Compile Sources" phase from "omdb" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = 4F87F9B92CF9808B003F7138 /* Sources */;
-			membershipExceptions = (
-				omdb.xcdatamodeld,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4F87F9D52CF9808D003F7138 /* omdbTests */ = {
@@ -65,7 +54,6 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				4F984D132CF981C6009CB6AA /* Exceptions for "omdb" folder in "omdb" target */,
-				4F984D142CF981C6009CB6AA /* Exceptions for "omdb" folder in "Compile Sources" phase from "omdb" target */,
 			);
 			path = omdb;
 			sourceTree = "<group>";

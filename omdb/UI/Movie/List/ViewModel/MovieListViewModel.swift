@@ -21,32 +21,33 @@ class MovieListViewModel: ObservableObject {
         self.isComplete = false
         self.isError = false
         
-        if page > totalOfPages {
-            return
+        if !isFromScroll {
+            page = 1
+            totalOfPages = 0
         }
         
-        if isFromScroll {
-            page += 1
-        } else {
-            page = 1
-            self.movies.removeAll()
+        if page > totalOfPages && totalOfPages > 0 {
+            return
         }
         
         do {
             let client = MovieClient(endpoint: .search(query: query, page: String(page)))
             let result: SearchResponse = try await client.performAndDecode()
-            let movies = result.search.map(\.self)
-            totalOfPages = Int(ceil(Double(Double(result.numberOfRows) ?? 1.0 / 10.0)))
+            
             let favoriteIds = fetchFavoriteMovies(viewContext: viewContext)
-            if favoriteIds.isEmpty {
-                self.movies.append(contentsOf: movies)
-            } else {
-                self.movies.append(contentsOf: movies.map {
-                    var movie = $0
-                    movie.isFavorite = favoriteIds.contains($0.imdbID)
-                    return movie
-                })
+            let movies = result.search.map(\.self).map { MovieAdapter.adapt(from: $0, favoriteIds: favoriteIds) }
+            
+            if !isFromScroll {
+                self.movies.removeAll()
             }
+            
+            self.movies.append(contentsOf: movies)
+            
+            if totalOfPages == 0, let numberOfRows = Double(result.numberOfRows) {
+                totalOfPages = Int(ceil(Double(numberOfRows / 10.0)))
+            }
+            page += 1
+            
             self.isComplete = true
             print("Fetched movie list: \(self.movies)")
         } catch let APIError.apiError(message) {

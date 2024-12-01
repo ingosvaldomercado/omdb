@@ -100,23 +100,13 @@ struct MovieCard: View {
 }
 
 #Preview("No favorite") {
-    @Previewable @StateObject var viewModel: MovieViewModel = .init(movie: .init(title: "Deadpool",
-                                                                                 year: "2016",
-                                                                                 imdbID: "tt1431045",
-                                                                                 type: .movie,
-                                                                                 poster: "https://m.media-amazon.com/images/M/MV5BNzY3ZWU5NGQtOTViNC00ZWVmLTliNjAtNzViNzlkZWQ4YzQ4XkEyXkFqcGc@._V1_SX300.jpg",
-                                                                                 isFavorite: true),
+    @Previewable @StateObject var viewModel: MovieViewModel = .init(movie: Movie.sampleData(),
                                                                     viewContext: .init(concurrencyType: .mainQueueConcurrencyType))
     MovieCard(movie: $viewModel.movie)
 }
 
 #Preview("Favorite") {
-    @Previewable @StateObject var viewModel: MovieViewModel = .init(movie: .init(title: "Deadpool",
-                                                                                 year: "2016",
-                                                                                 imdbID: "tt1431045",
-                                                                                 type: .movie,
-                                                                                 poster: "https://m.media-amazon.com/images/M/MV5BNzY3ZWU5NGQtOTViNC00ZWVmLTliNjAtNzViNzlkZWQ4YzQ4XkEyXkFqcGc@._V1_SX300.jpg",
-                                                                                 isFavorite: true),
+    @Previewable @StateObject var viewModel: MovieViewModel = .init(movie: Movie.sampleData(),
                                                                     viewContext: .init(concurrencyType: .mainQueueConcurrencyType))
     MovieCard(movie: $viewModel.movie)
 }

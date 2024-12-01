@@ -36,7 +36,6 @@ extension ConfigManagerType {
 
 // MARK: - Configuration Keys
 enum ConfigKeys: String {
-    case iKey = "I_KEY"
     case apiKey = "API_KEY"
     case apiBaseURL = "API_BASE_URL_KEY"
 }
