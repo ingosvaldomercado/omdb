@@ -26,9 +26,10 @@ struct Movie: Codable, Equatable, Identifiable {
 }
 
 enum MovieType: String, Codable {
+    case episode
+    case game
     case movie
     case series
-    case game
     case unknown
     
     init(from decoder: Decoder) throws {
